@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #1B2430;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #EAF3EE 0%, #EEF1F8 50%, #F3EFF6 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before, body::after {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+}
+
+body::before {
+  width: 420px; height: 420px;
+  background: rgba(76, 154, 120, 0.25);
+  top: -120px; left: -100px;
+}
+
+body::after {
+  width: 380px; height: 380px;
+  background: rgba(99, 102, 241, 0.18);
+  bottom: -100px; right: -80px;
+}
+
+/* ---------- Auth pages ---------- */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background: linear-gradient(150deg, #1B2430 0%, #2D3A4E 45%, #2E5C46 100%);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(27, 36, 48, 0.25);
+  padding: 38px 34px 30px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.auth-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #4C9A78, #6366F1);
+}
+
+.auth-card h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 25px;
+  margin: 4px 0 6px;
+  color: #fff;
+}
+
+.auth-sub {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  margin: 0 0 22px;
+}
+
+.auth-error {
+  background: rgba(253, 236, 236, 0.15);
+  color: #FFB4A8;
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.auth-field { margin-bottom: 14px; }
+
+.auth-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 6px;
+}
+
+.auth-field input {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.auth-field input::placeholder { color: rgba(255, 255, 255, 0.4); }
+
+.auth-field input:focus {
+  border-color: #7FD9A8;
+  box-shadow: 0 0 0 3px rgba(127, 217, 168, 0.2);
+}
+
+.auth-button {
+  width: 100%;
+  background: #fff;
+  color: #1B2430;
+  border: none;
+  padding: 12px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.auth-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 20px;
+}
+
+.auth-footer a {
+  color: #7FD9A8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard-page {
+  max-width: 620px;
+  margin: 50px auto;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 50px rgba(27, 36, 48, 0.08);
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.dashboard-page h2 {
+  font-family: 'Sora', sans-serif;
+  margin: 0 0 4px;
+}
+
+.dash-greeting { color: #667085; font-size: 14px; margin: 0; }
+
+.logout-btn {
+  background: #FDECEC;
+  color: #B42318;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #E4E7EC;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #667085;
+  margin-top: 2px;
+}
+
+.progress-track {
+  height: 8px;
+  background: #E4E7EC;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4C9A78, #6366F1);
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.tasks-section h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  margin: 0 0 14px;
+}
+
+.task-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.task-input-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #D0D5DD;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+}
+
+.task-input-row select {
+  padding: 10px 8px;
+  border: 1px solid #D0D5DD;
+  border-radius: 8px;
+  font-size: 13px;
+  background: #fff;
+}
+
+.task-add-btn {
+  background: #1B2430;
+  color: #fff;
+  border: none;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.task-add-btn:hover { background: #4C9A78; }
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.filter-tab {
+  border: 1px solid #E4E7EC;
+  background: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #667085;
+}
+
+.filter-tab.active {
+  background: #1B2430;
+  color: #fff;
+  border-color: #1B2430;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #E4E7EC;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.task-item span.task-text { flex: 1; }
+
+.task-item.done span.task-text {
+  text-decoration: line-through;
+  color: #98A2B3;
+}
+
+.priority-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.priority-high { background: #FDECEC; color: #B42318; }
+.priority-medium { background: #FEF3E2; color: #B54708; }
+.priority-low { background: #E7F5EE; color: #067647; }
+
+.task-delete {
+  background: none;
+  border: none;
+  color: #B42318;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.task-empty {
+  color: #98A2B3;
+  font-size: 13px;
+  text-align: center;
+  padding: 16px 0;
+}
